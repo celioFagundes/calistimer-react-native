@@ -10,7 +10,9 @@ const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Emom" screenOptions={{
+      headerShown: false
+    }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Emom" component={EMOMScreen} />
       <Stack.Screen name="Amrap" component={AMRAPScreen} />

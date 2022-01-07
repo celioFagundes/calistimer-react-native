@@ -1,38 +1,49 @@
-import React from 'react'
-import { View,Text , TouchableOpacity, StyleSheet} from 'react-native'
-const Home = (props) => {
-    return (
-        <View style = {styles.wrapper}>
-            <Text style = {styles.title}>CalisTimer</Text>
-            <TouchableOpacity onPress = {() => props.navigation.navigate('Emom')}>
-                <Text style = {styles.buttonText}>EMOM</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress = {() => props.navigation.navigate('Amrap')}>
-                <Text style = {styles.buttonText}>Amrap</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress = {() => props.navigation.navigate('Isometria')}>
-                <Text style = {styles.buttonText}>Isometria</Text>
-            </TouchableOpacity>
-        </View>
-    )
-}
+import React from 'react';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import Button from '../../components/Button';
+const Home = props => {
+  return (
+    <View style={styles.wrapper}>
+      <Text style={styles.title}>CalisTimer</Text>
+      <View>
+        <Button
+          onPress={() => props.navigation.navigate('Emom')}
+          stylesBtn={styles.buttonText}>
+          EMOM
+        </Button>
+        <Button
+          onPress={() => props.navigation.navigate('Amrap')}
+          stylesBtn={styles.buttonText}>
+          AMRAP
+        </Button>
+        <Button
+          onPress={() => props.navigation.navigate('Isometria')}
+          stylesBtn={styles.buttonText}>
+          Isometria
+        </Button>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-    wrapper:{
-        flex:1,
-        backgroundColor:'#000',
-        alignItems:'center',
-        justifyContent:'center'
-    },
-    title:{
-        fontFamily:"Ubuntu-Bold",
-        fontSize:40,
-        color:'#fff'
-    },
-    buttonText:{
-        fontFamily:"Ubuntu-Regular",
-        fontSize:32,
-        color:'#fff'
-    }
-})
-export default Home
+  wrapper: {
+    flex: 1,
+    backgroundColor: '#D6304A',
+    justifyContent: 'space-around',
+  },
+  title: {
+    fontFamily: 'Ubuntu-Bold',
+    fontSize: 48,
+    color: '#fff',
+    textAlign: 'center',
+  },
+  buttonText: {
+    fontFamily: 'Ubuntu-Regular',
+    fontSize: 32,
+    color: '#fff',
+    margin: 40,
+    textAlign: 'center',
+  },
+});
+export default Home;
